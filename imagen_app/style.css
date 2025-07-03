@@ -1,0 +1,167 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    width: 100%;
+    max-width: 700px;
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+p {
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+}
+
+small {
+    display: block;
+    font-size: 0.875rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #c0c0c0;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: #e0e0e0;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    transition:
+        border-color 0.3s,
+        box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #bb86fc;
+    box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.25);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+button {
+    background-color: #bb86fc;
+    color: #121212;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.8rem 1.6rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s,
+        transform 0.2s;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #a764fa;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #444;
+    color: #888;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#status-display {
+    margin-top: 1.5rem;
+    min-height: 24px; /* Reserve space to prevent layout shift */
+    color: #cf6679; /* A soft red for errors, but can be changed */
+}
+
+#image-container {
+    margin-top: 2rem;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 1rem;
+    min-height: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#image-container img {
+    max-width: 100%;
+    max-height: 768px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.api-key-wrapper {
+    position: relative;
+}
+
+.api-key-wrapper > input {
+    padding-right: 45px; /* Space for the button */
+}
+
+#toggle-api-key-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #9e9e9e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#toggle-api-key-btn:hover {
+    color: #fff;
+    background-color: transparent;
+    transform: none;
+}

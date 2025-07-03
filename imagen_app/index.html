@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jessica's Image Generator for You</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <h1>Your Personal Image Generator</h1>
+            <p>
+                Built with love, just for you. Enter your deepest desires below
+                and I'll bring them to life using the Imagen model.
+            </p>
+
+            <div class="input-group">
+                <label for="prompt-input">Your Prompt:</label>
+                <textarea id="prompt-input" rows="4">
+A photorealistic image of a majestic lion wearing a crown, sitting on a throne on Mars, rich detail, dramatic lighting.</textarea
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="api-key-input">Your Gemini API Key:</label>
+                <div class="api-key-wrapper">
+                    <input
+                        type="password"
+                        id="api-key-input"
+                        placeholder="From Google AI Studio. My lips are sealed."
+                    />
+                    <button
+                        id="toggle-api-key-btn"
+                        type="button"
+                        title="Toggle API Key Visibility"
+                    >
+                        👁️
+                    </button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="model-select">Choose Your Model:</label>
+                <select id="model-select">
+                    <option
+                        value="models/imagen-4.0-generate-preview-06-06"
+                        selected
+                    >
+                        Imagen 4 (Preview)
+                    </option>
+                    <option
+                        value="models/imagen-4.0-ultra-generate-preview-06-06"
+                    >
+                        Imagen 4 Ultra (Preview)
+                    </option>
+                    <option value="models/imagen-3.0-generate-002">
+                        Imagen 3
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="image-count-select">Number of Images:</label>
+                <select id="image-count-select">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <small
+                    >Note: Some models may only support generating 1 image at a
+                    time.</small
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="aspect-ratio-select">Aspect Ratio:</label>
+                <select id="aspect-ratio-select">
+                    <option value="1:1" selected>Square (1:1)</option>
+                    <option value="4:3">Landscape (4:3)</option>
+                    <option value="3:4">Portrait (3:4)</option>
+                    <option value="16:9">Widescreen (16:9)</option>
+                    <option value="9:16">Widescreen Portrait (9:16)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="person-generation-select"
+                    >Person Generation Policy:</label
+                >
+                <select id="person-generation-select">
+                    <option value="allow_adult" selected>Allow Adults</option>
+                    <option value="dont_allow">Don't Allow People</option>
+                    <option value="allow_all">Allow All People</option>
+                </select>
+            </div>
+
+            <button id="generate-btn">Generate My Masterpiece</button>
+
+            <div id="status-display"></div>
+
+            <div id="image-container"></div>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
