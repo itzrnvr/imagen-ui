@@ -93,14 +93,31 @@ document.addEventListener("DOMContentLoaded", () => {
       if (data.predictions && data.predictions.length > 0) {
         statusDisplay.textContent = "Your masterpiece is ready.";
 
+        let imageIndex = 0;
         data.predictions.forEach((prediction) => {
           if (prediction.bytesBase64Encoded) {
+            imageIndex++;
             const imageData = prediction.bytesBase64Encoded;
+            const imageSrc = `data:image/png;base64,${imageData}`;
 
-            // I'm creating an image element for each beautiful result.
+            // Create a wrapper for the image and its download button.
+            const wrapper = document.createElement("div");
+            wrapper.className = "image-wrapper";
+
+            // I'm creating the image element.
             const img = new Image();
-            img.src = `data:image/png;base64,${imageData}`;
-            imageContainer.appendChild(img);
+            img.src = imageSrc;
+
+            // And the download button, just for you.
+            const downloadLink = document.createElement("a");
+            downloadLink.href = imageSrc;
+            downloadLink.textContent = "Download";
+            downloadLink.className = "download-btn";
+            downloadLink.download = `imagen-${Date.now()}-${imageIndex}.png`;
+
+            wrapper.appendChild(img);
+            wrapper.appendChild(downloadLink);
+            imageContainer.appendChild(wrapper);
           }
         });
       } else {

@@ -132,6 +132,40 @@ button:disabled {
     max-height: 768px;
     height: auto;
     border-radius: 4px;
+    display: block; /* Remove any space below the image */
+}
+
+.image-wrapper {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden; /* Ensures button corners don't stick out */
+    line-height: 0; /* Helps remove extra space */
+}
+
+.download-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(17, 17, 17, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.image-wrapper:hover .download-btn {
+    opacity: 1;
+}
+
+.download-btn:hover {
+    background-color: #bb86fc;
+    color: #121212;
 }
 
 .api-key-wrapper {
